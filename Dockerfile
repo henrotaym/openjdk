@@ -2,7 +2,7 @@ FROM henrotaym/openjdk:23
 
 RUN apt-get update && \
     apt-get -y install nodejs npm && \
-    npm i -g nodemon
+    npm i -g nodemon gitmoji-cli
 
 COPY . .
 
