@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-rm -r bin/* && \
+rm -rf bin/* && \
 javac -d bin -cp src src/*.java
