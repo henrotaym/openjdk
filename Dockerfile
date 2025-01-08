@@ -6,4 +6,4 @@ RUN apt-get update && \
 
 COPY . .
 
-CMD [ "./devops/nodemon.sh" ]
+CMD [ "./devops/dev.sh" ]
