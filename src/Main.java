@@ -12,13 +12,20 @@ public class Main {
     public static void main(String[] args) {
 
         try{
-            DatabaseConfig configDB = new DatabaseConfig();
+            DatabaseConfig connectionDB = new DatabaseConfig();
 
-            List<Card> cards = new cardDAO(configDB.getConnection()).findAll();
+            cardDAO cardDao = new cardDAO(connectionDB.getConnection());
+
+            List<Card> cards = cardDao.findAll();
 
             for (Card card : cards) {
                 System.out.println(card);
             }
+
+            Card card = new cardDAO(connectionDB.getConnection()).findById(1);
+            System.out.println(card);
+
+            
 
 
         } catch (Exception e) {

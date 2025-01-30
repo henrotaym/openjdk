@@ -27,6 +27,15 @@ public class cardDAO {
         }
 
         return cards;
+    }
 
+    public Card findById(Integer id) throws Exception {
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM todos WHERE id = ?");
+        statement.setInt(1, id);
+        
+        ResultSet resultSet = statement.executeQuery();
+        resultSet.next();
+
+        return new ResultSetCardFactory(resultSet).createCard();
     }
 }
