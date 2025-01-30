@@ -2,7 +2,6 @@ package config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class DatabbaseConfig {
     private static final String URL = "jdbc:mysql://database:3306/app";
@@ -13,7 +12,7 @@ public class DatabbaseConfig {
         Connection connection = null;
         try {
              connection = DriverManager.getConnection(URL, USER, PASSWORD);
-             System.out.println("Connecté à la da db");
+             System.out.println("Connexion à la base de données ok !");
         } catch (Exception e) {
             e.printStackTrace();
         }
