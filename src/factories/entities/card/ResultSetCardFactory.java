@@ -7,8 +7,12 @@ import entities.Card;
 import enums.Status;
 import interfaces.factories.CardsFactory;
 
-public class ResulSetCardFactory implements CardsFactory {
+public class ResultSetCardFactory implements CardsFactory {
     private ResultSet resultSet;
+
+    public ResultSetCardFactory(ResultSet resultSet) {
+        this.resultSet = resultSet;
+    }
 
     public Card createCard() throws Exception {
         Integer id = resultSet.getInt("id");
