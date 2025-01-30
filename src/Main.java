@@ -16,6 +16,13 @@ public class Main {
 
             cardDAO cardDao = new cardDAO(connectionDB.getConnection());
 
+            
+            System.out.println("Ajout à la db");
+
+           /*  Card card1 = new Card(Optional.empty(),"Faire les courses", Status.TODO, false);
+            cardDao.save(card1); */
+
+            
             List<Card> cards = cardDao.findAll();
 
             for (Card card : cards) {
@@ -24,9 +31,6 @@ public class Main {
 
             Card card = new cardDAO(connectionDB.getConnection()).findById(1);
             System.out.println(card);
-
-            
-
 
         } catch (Exception e) {
             e.printStackTrace();
