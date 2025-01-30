@@ -1,0 +1,61 @@
+#!/bin/bash
+
+echo "📝 Configuration de Git"
+git config --global user.name "VotreNom"
+git config --global user.email "VotreEmail@example.com"
+git config --list
+
+echo "\n🌱 Initialisation et Clonage"
+git init
+git clone URL_DU_DEPOT
+
+echo "\n📂 Vérification et Suivi des Modifications"
+git status
+git diff
+git diff --staged
+
+echo "\n📝 Ajout et Commit des Modifications"
+git add .
+git commit -m "Premier commit"
+git commit --amend -m "Modification du message"
+
+echo "\n🔄 Historique et Retour en Arrière"
+git log --oneline
+git log --graph --decorate --oneline
+git checkout -- FICHIER
+git reset --soft HEAD~1
+git reset --hard HEAD~1
+
+echo "\n🚀 Gestion des Branches"
+git branch
+BRANCH_NAME="nouvelle-branche"
+git branch $BRANCH_NAME
+git checkout $BRANCH_NAME
+git checkout -b autre-branche
+git merge $BRANCH_NAME
+git branch -d $BRANCH_NAME
+
+echo "\n🔁 Dépôt Distant"
+git remote -v
+git remote add origin URL
+git push origin main
+git pull origin main
+git fetch origin
+git push origin --delete autre-branche
+
+echo "\n⚠️ Résolution de Conflits"
+git merge BRANCHE_CONFLIT
+echo "Résolvez les conflits à la main et exécutez :"
+echo "git add . && git commit -m 'Résolution de conflit'"
+
+echo "\n📦 Git Stash (Sauvegarde Temporaire)"
+git stash
+git stash list
+git stash pop
+git stash drop
+
+echo "\n🗑️ Suppression et Nettoyage"
+git rm FICHIER
+git clean -f
+git reflog
+
